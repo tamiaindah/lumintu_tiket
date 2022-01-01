@@ -648,10 +648,7 @@ ALTER TABLE `voucher`
 --
 -- Constraints for table `event`
 --
-ALTER TABLE `event`
-  ADD CONSTRAINT `event_event_image_foreign` FOREIGN KEY (`event_image`) REFERENCES `directus_files` (`id`);
 
---
 -- Constraints for table `invitation`
 --
 ALTER TABLE `invitation`
@@ -677,9 +674,7 @@ ALTER TABLE `order`
 -- Constraints for table `payment`
 --
 ALTER TABLE `payment`
-  ADD CONSTRAINT `payment_invoice_id_foreign` FOREIGN KEY (`invoice_id`) REFERENCES `invoice` (`invoice_id`) ON DELETE SET NULL,
-  ADD CONSTRAINT `payment_payment_receipt_foreign` FOREIGN KEY (`payment_receipt`) REFERENCES `directus_files` (`id`);
-
+  ADD CONSTRAINT `payment_invoice_id_foreign` FOREIGN KEY (`invoice_id`) REFERENCES `invoice` (`invoice_id`) ON DELETE SET NULL
 --
 -- Constraints for table `qrcode`
 --
@@ -690,8 +685,6 @@ ALTER TABLE `qrcode`
 --
 -- Constraints for table `session`
 --
-ALTER TABLE `session`
-  ADD CONSTRAINT `session_session_speaker_photo_foreign` FOREIGN KEY (`session_speaker_photo`) REFERENCES `directus_files` (`id`);
 
 --
 -- Constraints for table `ticket`
